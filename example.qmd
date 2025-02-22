@@ -1,5 +1,8 @@
 ---
-title: "{{EXTENSION}} Quarto Extension"
+title: "Language Cell Decorator"
+subtitle: Quarto Extension"
+filters:
+  - lcd
 format-links: true
 embed-resources: true
 format:
@@ -28,3 +31,8 @@ format:
   pptx:
     output-file: example-pptx
 ---
+
+```{r}
+#| eval: false
+print("Hello, World!")
+```

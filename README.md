@@ -1,11 +1,11 @@
-# Repository Template for Quarto Extension
+# Language Cell Decorator
 
-An opinionated repository template for Quarto extension.
+This extension adds a decorator to the code cells to display the language name.
 
 ## Installing
 
 ```bash
-quarto add mcanouil/quarto-{{EXTENSION}}
+quarto add mcanouil/quarto-lcd
 ```
 
 This will install the extension under the `_extensions` subdirectory.
@@ -19,10 +19,10 @@ Here is the source code for a minimal example: [example.qmd](example.qmd).
 
 Outputs of `example.qmd`:
 
-- [HTML](https://m.canouil.dev/quarto-{{EXTENSION}}/)
-- [Typst (PDF)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-typst.pdf)
-- [LaTeX (PDF)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-latex.pdf)
-- [Word (DOCX)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-openxml.docx)
-- [Reveal.js (HTML)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-revealjs.html)
-- [Beamer (PDF)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-beamer.pdf)
-- [PowerPoint (PPTX)](https://m.canouil.dev/quarto-{{EXTENSION}}/example-pptx.pptx)
+- [HTML](https://m.canouil.dev/quarto-lcd/)
+- [Typst (PDF)](https://m.canouil.dev/quarto-lcd/example-typst.pdf)
+- [LaTeX (PDF)](https://m.canouil.dev/quarto-lcd/example-latex.pdf)
+- [Word (DOCX)](https://m.canouil.dev/quarto-lcd/example-openxml.docx)
+- [Reveal.js (HTML)](https://m.canouil.dev/quarto-lcd/example-revealjs.html)
+- [Beamer (PDF)](https://m.canouil.dev/quarto-lcd/example-beamer.pdf)
+- [PowerPoint (PPTX)](https://m.canouil.dev/quarto-lcd/example-pptx.pptx)
