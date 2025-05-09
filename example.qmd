@@ -1,10 +1,11 @@
 ---
 title: "Language Cell Decorator"
-subtitle: Quarto Extension"
+subtitle: "Quarto Extension"
 filters:
   - lcd
 format-links: true
 embed-resources: true
+engine: markdown
 format:
   html:
     output-file: index
