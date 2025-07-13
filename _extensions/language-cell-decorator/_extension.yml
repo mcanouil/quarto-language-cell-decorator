@@ -4,4 +4,4 @@ version: 0.1.0
 quarto-required: ">=1.6.41"
 contributes:
   filters:
-    - lcd.lua
+    - language-cell-decorator.lua

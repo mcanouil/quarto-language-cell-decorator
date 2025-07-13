@@ -6,8 +6,8 @@ authors:
   - family-names: "Canouil"
     given-names: "Mickaël"
     orcid: "https://orcid.org/0000-0002-3396-4549"
-repository-code: "https://github.com/mcanouil/quarto-lcd"
-url: "http://m.canouil.dev/quarto-lcd/"
+repository-code: "https://github.com/mcanouil/quarto-language-cell-decorator"
+url: "http://m.canouil.dev/quarto-language-cell-decorator/"
 license: "MIT"
 date-released: "2025-02-22"
 version: 0.1.0

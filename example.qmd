@@ -2,10 +2,10 @@
 title: "Language Cell Decorator"
 subtitle: "Quarto Extension"
 filters:
-  - lcd
+  - at: pre-ast
+    path: _extensions/language-cell-decorator/language-cell-decorator.lua
 format-links: true
 embed-resources: true
-engine: markdown
 format:
   html:
     output-file: index
@@ -34,6 +34,18 @@ format:
 ---
 
 ```{r}
-#| eval: false
+print("Hello, World!")
+```
+
+```{.r}
+print("Hello, World!")
+```
+
+```{r}
+#| filename: example1.qmd
+print("Hello, World!")
+```
+
+```{.r filename=example2.qmd}
 print("Hello, World!")
 ```

@@ -1,7 +1,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: Support
-    url: https://github.com/mcanouil/quarto-lcd/discussions
+    url: https://github.com/mcanouil/quarto-language-cell-decorator/discussions
     about: Please ask and answer questions here.
   - name: Issue with Quarto CLI
     url: https://github.com/quarto-dev/quarto-cli
