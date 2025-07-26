@@ -1,4 +1,17 @@
+---
+--- Extracts filename and language from a code block, decorates it for Quarto rendering.
+---
+--- @param code table: The code block object from Quarto AST.
+--- @return table|quarto.DecoratedCodeBlock: Decorated code block with filename and language attributes if found.
 function language_filename(code)
+  local code_cell_filename = string.match(code.text, "^%s*.-|%s*filename:%s*([%w%._%-]+)")
+  if code_cell_filename then
+    code.attr = code.attr or {}
+    code.attr.attributes = code.attr.attributes or {}
+    code.attr.attributes.filename = code_cell_filename
+    code.text = string.gsub(code.text, "^%s*.-|%s*filename:%s*([%w%._%-]+)", "")
+  end
+
   local lang = code.attr.classes[1]
   if lang == "cell-code" then
     _, _, matched_lang = string.find(code.text, "^`+%{%{([^%}]*)%}%}")
@@ -9,42 +22,15 @@ function language_filename(code)
       lang = matched_lang
     end
   end
-
-  local is_html = quarto.doc.is_format("html")
-  local is_latex = quarto.doc.is_format("latex") or quarto.doc.is_format("pdf")
-  local is_typst = quarto.doc.is_format("typst")
-
-  if lang then
+  if lang and lang ~= "" then
     lang = lang:upper()
-  end
-
-  local code_clone = code:clone()
-  code_clone.attr.attributes.filename = nil
-
-  local extracted_filename = nil
-  local clean_text = code_clone.text
-
-  if clean_text then
-    extracted_filename = string.match(clean_text, "^.+%| filename:%s*([^\n]*)")
-    if not extracted_filename then
-      extracted_filename = string.match(clean_text, "\n%s*.+%| filename:%s*([^\n]*)")
-    end
-
-    clean_text = string.gsub(clean_text, "\n%s*.+| filename: [^\n]*", "")
-    clean_text = string.gsub(clean_text, "^%s*.+| filename: [^\n]*\n?", "")
-    code_clone.text = clean_text
-  end
-
-  local filename = lang
-  if code.attr.attributes.filename then
-    filename = lang .. " - " .. code.attr.attributes.filename
-  elseif extracted_filename then
-    filename = lang .. " - " .. extracted_filename
+  else
+    return code
   end
 
   return quarto.DecoratedCodeBlock({
-    filename = filename,
-    code_block = code_clone
+    filename = lang,
+    code_block = code
   })
 end
 
