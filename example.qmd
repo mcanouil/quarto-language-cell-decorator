@@ -21,6 +21,8 @@ format:
     output-file: example-docx
   revealjs:
     output-file: example-revealjs
+    execute:
+      echo: true
   beamer:
     output-file: example-beamer
     aspectratio: 169
@@ -31,6 +33,8 @@ embed-resources: true
 filters:
   - language-cell-decorator
 ---
+
+## Examples
 
 ```{r}
 print("Hello, World!")
