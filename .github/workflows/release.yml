@@ -36,3 +36,4 @@ jobs:
       formats: "html typst pdf docx revealjs beamer pptx"
       tinytex: true
       quarto: "${{ github.event.inputs.quarto }}"
+      r: true
