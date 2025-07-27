@@ -1,11 +1,6 @@
 ---
 title: "Language Cell Decorator"
 subtitle: "Quarto Extension"
-filters:
-  - at: post-quarto
-    path: _extensions/language-cell-decorator/language-cell-decorator.lua
-format-links: true
-embed-resources: true
 format:
   html:
     output-file: index
@@ -31,6 +26,10 @@ format:
     aspectratio: 169
   pptx:
     output-file: example-pptx
+format-links: true
+embed-resources: true
+filters:
+  - language-cell-decorator
 ---
 
 ```{r}
