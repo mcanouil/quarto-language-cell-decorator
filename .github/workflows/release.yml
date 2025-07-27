@@ -33,7 +33,7 @@ jobs:
     secrets: inherit
     with:
       version: "${{ github.event.inputs.version }}"
-      formats: "html typst pdf docx revealjs beamer pptx"
+      formats: "html revealjs"
       tinytex: true
       quarto: "${{ github.event.inputs.quarto }}"
       r: true
