@@ -10,4 +10,4 @@ repository-code: "https://github.com/mcanouil/quarto-language-cell-decorator"
 url: "http://m.canouil.dev/quarto-language-cell-decorator/"
 license: "MIT"
 date-released: "2025-07-27"
-version: 0.0.0
+version: 0.1.0
