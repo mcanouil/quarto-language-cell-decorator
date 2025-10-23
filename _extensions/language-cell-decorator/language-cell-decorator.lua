@@ -29,7 +29,7 @@
 ---
 --- @param code table The code block object from Quarto AST
 --- @return table Decorated code block with filename and language attributes if found, otherwise original code block
-function language_filename(code)
+local function language_filename(code)
   --- @type string|nil Extracted filename from code block comment
   local code_cell_filename = string.match(code.text, "^%s*.-|%s*filename:%s*([%w%._%-]+)")
   if code_cell_filename then
