@@ -1,0 +1,12 @@
+# _schema.yml for "language-cell-decorator" filter extension
+# Describes element attributes for IDE tooling and runtime validation.
+
+# Element attributes accepted by the filter on CodeBlock elements.
+# The filter extracts the language from code block classes and decorates the block.
+# It also supports extracting a filename from a special comment syntax:
+#   language | filename: name.ext
+element-attributes:
+  CodeBlock:
+    filename:
+      type: string
+      description: "Filename to display as a decoration label on the code block."
