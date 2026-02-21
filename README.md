@@ -5,7 +5,7 @@ This extension adds a decorator to the code cells to display the language name.
 ## Installation
 
 ```bash
-quarto add mcanouil/quarto-language-cell-decorator@0.3.0
+quarto add mcanouil/quarto-language-cell-decorator@0.3.1
 ```
 
 This will install the extension under the `_extensions` subdirectory.
