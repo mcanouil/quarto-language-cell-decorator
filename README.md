@@ -2,6 +2,13 @@
 
 This extension adds a decorator to the code cells to display the language name.
 
+> [!WARNING]
+> This extension has been superseded by the [Code Window extension](https://github.com/mcanouil/quarto-code-window).
+> Code Window shows the language name on code blocks by default and adds window-style decorations.
+> Please update your project to use the new extension.
+>
+> To install the new extension, see the [installation instructions](https://github.com/mcanouil/quarto-code-window?tab=readme-ov-file#installation).
+
 ## Installation
 
 ```bash

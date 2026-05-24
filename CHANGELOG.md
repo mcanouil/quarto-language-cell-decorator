@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-No user-facing changes.
+### Documentation
+
+- docs: Deprecate Language Cell Decorator extension in favour of Code Window.
 
 ## 0.3.1 (2026-02-21)
 
