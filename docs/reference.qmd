@@ -1,0 +1,66 @@
+---
+title: "Reference"
+subtitle: "Everything the language-cell-decorator extension does."
+description: "The complete language-cell-decorator behaviour: the language label, the filename attribute, and what Code Window does instead."
+---
+
+::: {.callout-warning}
+This extension is superseded by [Code Window](https://m.canouil.dev/quarto-code-window).
+These pages exist for projects that have not moved yet.
+:::
+
+## Enabling the filter
+
+```yaml
+filters:
+  - language-cell-decorator
+```
+
+There is nothing else to configure.
+
+## The language label
+
+The language comes from the class Quarto already puts on a code block, so a block written this way:
+
+````markdown
+```r
+summary(cars)
+```
+````
+
+is labelled `R`, with no attribute of its own.
+
+The label sits above the block, in the same place Quarto puts a filename.
+
+## The filename attribute
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `filename` | string | A label to show on the block instead of, or alongside, the language. |
+
+: The one attribute. {.striped .hover tbl-colwidths="[18,12,70]"}
+
+````markdown
+```{.r filename="analysis.R"}
+summary(cars)
+```
+````
+
+## Moving to Code Window
+
+[Code Window](https://m.canouil.dev/quarto-code-window) labels blocks with their language by default, so the behaviour above needs no configuration there:
+
+```yaml
+filters:
+  - path: code-window
+    at: pre-quarto
+```
+
+It adds window-style chrome, per-block styles, and automatic filenames on top.
+Its `auto-filename` option controls whether a filename is derived when none is given.
+
+## Limitations
+
+- HTML formats only. Every other format leaves the code block as it was.
+- The label is the language Quarto recorded; a block with no language has nothing to show.
+- No further options. This extension does one thing, which is why its successor absorbed it.

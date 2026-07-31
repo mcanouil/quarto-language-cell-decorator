@@ -18,20 +18,12 @@ quarto add mcanouil/quarto-language-cell-decorator@0.4.0
 This will install the extension under the `_extensions` subdirectory.
 If you're using version control, you will want to check in this directory.
 
-## Usage
+## Documentation
 
-Add the extension to your document's YAML front matter:
+The full documentation lives at <https://m.canouil.dev/quarto-language-cell-decorator/>: the language label, the filename attribute, decorated blocks in several languages, and how to move to Code Window.
 
-```yaml
-filters:
-  - language-cell-decorator
-```
+[`example.qmd`](example.qmd) is a short, standalone starting point you can copy.
 
-## Example
+## Licence
 
-Here is the source code for a minimal example: [example.qmd](example.qmd).
-
-Output of `example.qmd`:
-
-- [HTML](https://m.canouil.dev/quarto-language-cell-decorator/)
-- [Reveal.js (HTML)](https://m.canouil.dev/quarto-language-cell-decorator/example-revealjs.html)
+[MIT](https://github.com/mcanouil/quarto-language-cell-decorator?tab=MIT-1-ov-file#readme).
