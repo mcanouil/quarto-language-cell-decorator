@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.2 (2026-08-01)
+
 ### Documentation
 
 - docs: List `code-window` under `filters` by name alone. The long form `path`/`at` overrides the entry point of every filter that extension contributes.
