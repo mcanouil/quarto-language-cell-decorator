@@ -98,8 +98,7 @@ filters:
   # code-window is the extension that supersedes this one, and it decorates
   # code blocks too. Running both would make it impossible to tell which
   # decoration came from which, so this site runs only the one it documents.
-  - at: post-quarto
-    path: gitlink
+  - gitlink
   - language-cell-decorator
 
 extensions:
