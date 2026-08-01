@@ -56,7 +56,7 @@ Plain text, with no language.
 
 There is no language to show, so the block is left alone.
 
-## A filename instead
+## A filename as well as the language
 
 ````markdown
 ```{.r filename="analysis.R"}
@@ -67,6 +67,9 @@ summary(cars)
 ```{.r filename="analysis.R"}
 summary(cars)
 ```
+
+`filename` is Quarto's own attribute.
+The filter adds its label to the one Quarto drew, so the block carries both, language first.
 
 ## What Code Window does with the same blocks
 
