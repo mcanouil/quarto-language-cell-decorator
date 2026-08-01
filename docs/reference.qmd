@@ -58,8 +58,7 @@ The visible label is still the language.
 
 ```yaml
 filters:
-  - path: code-window
-    at: pre-quarto
+  - code-window
 ```
 
 It adds window-style chrome, per-block styles, and automatic filenames on top.

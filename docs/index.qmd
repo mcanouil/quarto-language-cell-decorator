@@ -31,8 +31,7 @@ quarto add mcanouil/quarto-code-window
 
 ```yaml
 filters:
-  - path: code-window
-    at: pre-quarto
+  - code-window
 ```
 
 Code Window shows the language by default, so nothing else is needed to get what this extension did.
