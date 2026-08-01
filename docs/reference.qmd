@@ -1,0 +1,83 @@
+---
+title: "Reference"
+subtitle: "Everything the language-cell-decorator extension does."
+description: "The complete language-cell-decorator behaviour: the language label, the filename attribute, and what Code Window does instead."
+---
+
+::: {.callout-warning}
+This extension is superseded by [Code Window](https://m.canouil.dev/quarto-code-window).
+These pages exist for projects that have not moved yet.
+:::
+
+## Enabling the filter
+
+```yaml
+filters:
+  - language-cell-decorator
+```
+
+There is nothing else to configure.
+
+## The language label
+
+The language comes from the class Quarto already puts on a code block, so a block written this way:
+
+````markdown
+```r
+summary(cars)
+```
+````
+
+is labelled `R`, with no attribute of its own.
+
+The label sits above the block, in the same place Quarto puts a filename.
+
+## The filename attribute
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `filename` | string | Quarto's own filename label, which the filter leaves in place. |
+
+: The one attribute. {.striped .hover tbl-colwidths="[18,12,70]"}
+
+````markdown
+```{.r filename="analysis.R"}
+summary(cars)
+```
+````
+
+`filename` is a Quarto attribute rather than one this filter reads.
+A block that carries it is labelled twice, the language above the filename, because the filter adds its own label to the one Quarto already drew.
+
+In a display block written with double braces, a `#| filename:` line is taken out of the code shown and recorded on the block as `data-filename`.
+The visible label is still the language.
+
+## Moving to Code Window
+
+[Code Window](https://m.canouil.dev/quarto-code-window) labels blocks with their language by default, so the behaviour above needs no configuration there:
+
+```yaml
+filters:
+  - path: code-window
+    at: pre-quarto
+```
+
+It adds window-style chrome, per-block styles, and automatic filenames on top.
+Its `auto-filename` option controls whether a filename is derived when none is given.
+
+## Where the label is drawn
+
+The filter hands the block to Quarto as a decorated code block, so what the reader sees depends on the format.
+
+| Format | Result |
+| --- | --- |
+| HTML, including RevealJS | The language above the block, where a filename would go. |
+| PDF | The block becomes a code listing captioned with the language. |
+| Typst, Word | No label. The block is left as it was. |
+
+: What each format does with the decoration. {.striped .hover tbl-colwidths="[30,70]"}
+
+## Limitations
+
+- The label is the language Quarto recorded; a block with no language has nothing to show.
+- No further options. This extension does one thing, which is why its successor absorbed it.

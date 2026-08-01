@@ -1,0 +1,97 @@
+---
+title: "Language Cell Decorator"
+subtitle: "The language name, on the code block."
+description: "What the language-cell-decorator extension did, why Code Window supersedes it, and how to move across."
+authors:
+  - name: "Mickaël CANOUIL, _Ph.D._"
+    orcid: "0000-0002-3396-4549"
+    url: "https://mickael.canouil.fr"
+---
+
+::: {.callout-warning}
+## Superseded by Code Window
+
+This extension is no longer developed.
+[Code Window](https://m.canouil.dev/quarto-code-window) replaces it: it labels code blocks with their language by default, and adds window-style decorations besides.
+
+These pages document `language-cell-decorator` for the projects still using it, and describe the move.
+:::
+
+A code block in a Quarto document carries its language in a class, and shows it nowhere.
+A reader scanning a page of examples has to infer from the syntax which language each block is written in.
+
+`language-cell-decorator` put the name back on the block.
+
+## Moving to Code Window
+
+```bash
+quarto remove mcanouil/quarto-language-cell-decorator
+quarto add mcanouil/quarto-code-window
+```
+
+```yaml
+filters:
+  - path: code-window
+    at: pre-quarto
+```
+
+Code Window shows the language by default, so nothing else is needed to get what this extension did.
+Its own documentation covers the rest: <https://m.canouil.dev/quarto-code-window>.
+
+## Installation
+
+Still available, for projects that have not moved yet:
+
+```bash
+quarto add {{< var extension.reference >}}
+```
+
+This will install the extension under the `_extensions` subdirectory.
+If you are using version control, you will want to check in this directory.
+
+Or install it from your editor with [Quarto Wizard](https://m.canouil.dev/quarto-wizard):
+
+::: {.btn-group role="group" aria-label="Quarto Wizard installer options"}
+
+[Visual Studio Code](vscode://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Visual Studio Code using the Quarto Wizard extension."}
+[Positron](positron://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in Positron using the Quarto Wizard extension."}
+[VSCodium](vscodium://mcanouil.quarto-wizard/install?repo={{< var extension.wizard-reference >}}){.btn .btn-outline-primary title="Install {{< var extension.reference >}} in VSCodium using the Quarto Wizard extension."}
+
+:::
+
+## Quick start
+
+```yaml
+filters:
+  - language-cell-decorator
+```
+
+Then write code blocks as usual:
+
+````markdown
+```r
+summary(cars)
+```
+````
+
+```r
+summary(cars)
+```
+
+The block above is decorated by the extension as this page renders.
+
+See the [Reference](reference.qmd) for the filename label, and the [Examples](examples.qmd) for blocks in several languages.
+
+## Where it works
+
+HTML formats, including RevealJS, draw the language above the block.
+PDF turns the block into a code listing captioned with the language.
+Typst and Word leave the block as it was.
+
+## Links
+
+- [Code Window](https://m.canouil.dev/quarto-code-window), the replacement.
+- [Reference](reference.qmd) for the filename label.
+- [Examples](examples.qmd) for decorated blocks.
+- [Changelog](changelog.qmd) for what each release changed.
+- [Source and issues](https://github.com/mcanouil/quarto-language-cell-decorator) on GitHub.

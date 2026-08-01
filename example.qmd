@@ -7,7 +7,6 @@ author:
     url: "https://mickael.canouil.fr"
 format:
   html:
-    output-file: index
     toc: true
     code-tools: true
   revealjs:
@@ -20,21 +19,24 @@ filters:
   - language-cell-decorator
 ---
 
-## Examples
+> This extension is superseded by [Code Window](https://m.canouil.dev/quarto-code-window), which labels code blocks by default.
 
-```{r}
-print("Hello, World!")
+Enabling the filter is the whole of the setup: the language comes from the class Quarto already puts on the block.
+
+```r
+summary(cars)
 ```
 
-```{.r}
-print("Hello, World!")
+```python
+print(sum(range(10)))
 ```
 
-```{r}
-#| filename: example1.r
-print("Hello, World!")
+A `filename` attribute replaces the label:
+
+```{.r filename="analysis.R"}
+summary(cars)
 ```
 
-```{.r filename=example2.r}
-print("Hello, World!")
-```
+A block with no language has nothing to show, and is left alone.
+
+Full documentation: <https://m.canouil.dev/quarto-language-cell-decorator/>.

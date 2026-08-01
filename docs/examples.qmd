@@ -1,0 +1,82 @@
+---
+title: "Examples"
+subtitle: "Decorated blocks."
+description: "Code blocks in several languages, each labelled by the extension as this page renders."
+---
+
+::: {.callout-warning}
+This extension is superseded by [Code Window](https://m.canouil.dev/quarto-code-window).
+:::
+
+Every block below is labelled by the extension as this page is rendered.
+
+::: {.callout-note}
+This site runs only this extension, and not the `code-window` filter the other sites in the family use.
+Both decorate code blocks, so running the two together would make it impossible to tell which decoration came from which.
+:::
+
+## One block per language
+
+````markdown
+```r
+summary(cars)
+```
+````
+
+```r
+summary(cars)
+```
+
+```python
+print(sum(range(10)))
+```
+
+```bash
+find . -name '*.qmd' -print
+```
+
+```yaml
+filters:
+  - language-cell-decorator
+```
+
+Each carries the language Quarto recorded on it, and nothing was written on the blocks themselves.
+
+## A block with no language
+
+````markdown
+```
+Plain text, with no language.
+```
+````
+
+```
+Plain text, with no language.
+```
+
+There is no language to show, so the block is left alone.
+
+## A filename as well as the language
+
+````markdown
+```{.r filename="analysis.R"}
+summary(cars)
+```
+````
+
+```{.r filename="analysis.R"}
+summary(cars)
+```
+
+`filename` is Quarto's own attribute.
+The filter adds its label to the one Quarto drew, so the block carries both, language first.
+
+## What Code Window does with the same blocks
+
+[Code Window](https://m.canouil.dev/quarto-code-window) shows the language by default, so these blocks look the same there without any configuration, and it adds window chrome and per-block styling besides.
+
+Every other site in this family renders its code blocks through it; this one does not, so that the decoration above is unambiguously this extension's.
+
+## Source
+
+The repository ships a short, standalone starting point you can copy: [`example.qmd`](https://github.com/mcanouil/quarto-language-cell-decorator/blob/main/example.qmd).
