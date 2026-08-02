@@ -6,7 +6,7 @@
 # It also supports extracting a filename from a special comment syntax:
 #   language | filename: name.ext
 
-$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v2/extension-schema.json
 
 attributes:
   CodeBlock:
